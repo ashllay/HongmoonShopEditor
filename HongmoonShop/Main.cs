@@ -185,10 +185,10 @@ namespace HongmoonShop
             string sNewName = TxbItemUpdateName.Text.Replace("'", "''");
             string sUpdateItem = "";
 
-            sUpdateItem += $"UPDATE Goods SET GoodsName ='{sNewName}' WHERE GoodsID = {sGoodsId}\r\n";
-            sUpdateItem += $"UPDATE GoodsDisplay SET GoodsDisplayName ='{sNewName}' WHERE GoodsId = {sGoodsId}\r\n";
+            sUpdateItem += $"UPDATE Goods SET GoodsName = N'{sNewName}' WHERE GoodsID = {sGoodsId}\r\n";
+            sUpdateItem += $"UPDATE GoodsDisplay SET GoodsDisplayName = N'{sNewName}' WHERE GoodsId = {sGoodsId}\r\n";
             sUpdateItem += $"UPDATE Items SET ItemName ='{sNewName}' WHERE ItemId = {sItemID}\r\n";
-            sUpdateItem += $"UPDATE ItemDisplay SET ItemDisplayName ='{sNewName}' WHERE ItemId = {sItemID} and LanguageCode = 11\r\n";
+            sUpdateItem += $"UPDATE ItemDisplay SET ItemDisplayName = N'{sNewName}' WHERE ItemId = {sItemID} and LanguageCode = 11\r\n";
             sUpdateItem += $"UPDATE GoodsSalePricePolicies SET SalePrice ='{sNewPrice}' WHERE GoodsId = {sGoodsId}";
 
             int i = sqlhelper.ExecuteSqlTransaction(sUpdateItem);

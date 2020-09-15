@@ -121,6 +121,7 @@
             this.ClientSize = new System.Drawing.Size(263, 119);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "SQL_Settings";
             this.Text = "SQL_Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SQL_Settings_FormClosing);
